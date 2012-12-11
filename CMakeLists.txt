@@ -71,7 +71,7 @@ SET(BOOST_REQUIRED_COMPONENTS
 #    filesystem
 #    program_options
 #    regex
-#    system
+        system
 	thread
 #    unit_test_framework
 )

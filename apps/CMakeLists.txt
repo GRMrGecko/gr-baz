@@ -17,7 +17,7 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 
-include(GrPython)
+#include(GrPython)
 
 #GR_PYTHON_INSTALL(
 #    PROGRAMS
@@ -26,4 +26,22 @@ include(GrPython)
 #    borip_server
 #    DESTINATION bin
 #)
+
+########################################################################
+# Include python install macros
+########################################################################
+include(GrPython)
+if(NOT PYTHONINTERP_FOUND)
+    return()
+endif()
+
+########################################################################
+# Install python sources
+########################################################################
+GR_PYTHON_INSTALL(
+    FILES
+	borip_RTL.py
+	borip_RTL2.py
+    DESTINATION ${GR_PYTHON_DIR}/baz
+)
 
